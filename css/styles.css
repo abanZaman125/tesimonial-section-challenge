@@ -1,0 +1,119 @@
+body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    min-height: 100vh;
+    background-color: #ecf2f8
+}
+
+@media screen and (max-width: 576px) {
+    body>main {
+        padding: 2em 0;
+        grid-template-columns: 1fr
+    }
+
+    main>div {
+        grid-row: unset !important;
+        grid-column: unset !important
+    }
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+    gap: 1.5em;
+    font-family: "Barlow Semi Condensed", sans-serif
+}
+
+main>div {
+    -webkit-box-shadow: 15px 16px 20px -8px rgba(0, 0, 0, .25);
+    box-shadow: 15px 16px 20px -8px rgba(0, 0, 0, .25);
+    border-radius: 15px;
+    padding: 1.5em
+}
+
+main>.white-bg {
+    background-color: #fff
+}
+
+main>div:nth-child(1) {
+    position: relative;
+    background-color: #7541c8;
+    grid-column: 1/3
+}
+
+main>div:nth-child(1) img:nth-child(1) {
+    border: 2px solid #a882e5
+}
+
+main>div:nth-child(2) {
+    background-color: #48556a;
+    grid-column: 3/4
+}
+
+main>div:nth-child(3) {
+    grid-row: 2
+}
+
+main>div:nth-child(4) {
+    background-color: #19212e;
+    grid-row: 2;
+    grid-column: 2/4
+}
+
+main>div:nth-child(4) img {
+    border: 2px solid #7541c8
+}
+
+main>div:nth-child(5) {
+    grid-row: 1/3;
+    grid-column: 4
+}
+
+main>div>img:nth-child(1) {
+    width: 39px;
+    border-radius: 100%;
+    vertical-align: sub;
+    margin-right: .75em
+}
+
+main>div>#quotation-marks {
+    position: absolute;
+    top: 0%;
+    right: 15%;
+    opacity: 80%;
+    z-index: 0;
+    width: 124px
+}
+
+main>div>p {
+    display: inline-block;
+    color: #cfcfcf;
+    font-size: .8125em
+}
+
+main>div>h2 {
+    position: relative;
+    z-index: 1;
+    font-size: 1.5em;
+    margin-bottom: revert
+}
+
+main>div>h2,
+main>div>p>.testimonial-name {
+    display: block;
+    color: #fff
+}
+
+main>div.white-bg>h2,
+main>div.white-bg>p>span.testimonial-name {
+    color: #19212e
+}

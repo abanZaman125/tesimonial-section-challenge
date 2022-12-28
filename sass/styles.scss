@@ -1,0 +1,127 @@
+/*Body Element*/
+body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+
+    min-height: 100vh;
+    background-color: hsl(210, 46%, 95%);
+}
+
+/*The Media Query changes the PADDING and TEMPLATE-COLUMNS for the main element grid container.
+  It also unset-s the custom GRID-ROW and GRID-COLUMN for the grid-items.*/
+@media screen and (max-width: 375px) {
+    body>main {
+        padding: 2em 0;
+        grid-template-columns: 1fr;
+    }
+
+    main>div {
+        grid-row: unset !important;
+        grid-column: unset !important;
+    }
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+    gap: 1.5em;
+
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+/*Styling for the grid-items.*/
+main> {
+    div {
+        box-shadow: 15px 16px 20px -8px rgb(0 0 0 / 25%);
+        border-radius: 15px;
+        padding: 1.5em;
+    }
+
+    .white-bg {
+        background-color: white;
+    }
+
+    div:nth-child(1) {
+        position: relative;
+        background-color: hsl(263, 55%, 52%);
+        grid-column: 1/3;
+
+        img:nth-child(1) {
+            border: 2px solid #a882e5;
+        }
+    }
+
+    div:nth-child(2) {
+        background-color: hsl(217, 19%, 35%);
+        grid-column: 3/4;
+    }
+
+    div:nth-child(3) {
+        grid-row: 2;
+    }
+
+    div:nth-child(4) {
+        background-color: hsl(219, 29%, 14%);
+        grid-row: 2;
+        grid-column: 2/4;
+
+        img {
+            border: 2px solid hsl(263, 55%, 52%);
+        }
+    }
+
+    div:nth-child(5) {
+        grid-row: 1/3;
+        grid-column: 4;
+    }
+}
+
+/*Styling for the ELEMENTS INSIDE of the grid-items.*/
+main>div> {
+
+    /*Only affect testimonial pictures, not the quotation mark image.*/
+    img:nth-child(1) {
+        width: 39px;
+        border-radius: 100%;
+        vertical-align: sub;
+        margin-right: 0.75em;
+    }
+
+    #quotation-marks {
+        position: absolute;
+        top: 0%;
+        right: 15%;
+        opacity: 80%;
+        z-index: 0;
+        width: 124px;
+    }
+
+    p {
+        display: inline-block;
+        color: hsl(0, 0%, 81%);
+        font-size: 0.8125em;
+    }
+
+    h2 {
+        position: relative;
+        z-index: 1;
+        font-size: 1.5em;
+        margin-bottom: revert;
+    }
+
+    h2,
+    p>.testimonial-name {
+        display: block;
+        color: white;
+    }
+
+}
+
+/*White background grid-items' H2 and TESTIMONIAL styling.*/
+main>div.white-bg>h2,
+main>div.white-bg>p>span.testimonial-name {
+    color: hsl(219, 29%, 14%);
+}
