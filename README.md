@@ -1,2 +1,3 @@
-# tesimonial-section-challenge
-Testimonials Grid Section solution, by me :D
+# Tesimonial-section-challenge by Aban Zaman
+Woowoo
+
